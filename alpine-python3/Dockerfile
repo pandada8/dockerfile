@@ -1,5 +1,5 @@
 FROM alpine:edge
-RUN sed -i "s/dl-cdn.alpinelinux.org/mirror.pandada8.me/" /etc/apk/repositories && apk add --update \
+RUN apk add --update \
 		musl \
 		build-base \
 		python3 \
