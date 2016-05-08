@@ -8,7 +8,6 @@ RUN sed -i s/cdn/6/ /etc/apk/repositories \
 		bash \
 		git \
     && pip3 install --no-cache-dir --upgrade pip \
-    && rm -rf /var/cache/*
 
 RUN cd /usr/bin \
   && ln -sf easy_install-3.5 easy_install \
