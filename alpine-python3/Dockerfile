@@ -1,12 +1,14 @@
 FROM alpine:edge
-RUN apk add --update \
-		musl \
+RUN sed -i s/cdn/6/ /etc/apk/repositories \
+    && apk add --update --progress \
+	    musl \
 		build-base \
 		python3 \
 		python3-dev \
 		bash \
 		git \
-    &&  pip3 install --upgrade pip
+    && pip3 install --no-cache-dir --upgrade pip \
+    && rm -rf /var/cache/*
 
 RUN cd /usr/bin \
   && ln -sf easy_install-3.5 easy_install \
